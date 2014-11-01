@@ -69,5 +69,5 @@ postCtx =
 
 config :: Configuration
 config = def {
-        destinationDirectory = "../site"
+        destinationDirectory = "../"
     }
