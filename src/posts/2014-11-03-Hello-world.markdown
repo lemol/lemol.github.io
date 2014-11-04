@@ -8,12 +8,10 @@ published: 03-11-2014
 ~~~haskell
 print "Hello world!"
 ~~~
-~~~csharp
-Console.WriteLine("Hello world!")
-~~~
-~~~javascript
-console.log("Hello world!")
-~~~
 
+Olá, sejam todos bem vindos ao meu blog.
 
-Olá, sejam todos bem vindos.
+Em qualidade de primeiro post, para além das boas vindas, quero dedicar o mesmo ao blog em uma especie de apresentação.
+
+Neste espaço pretendo escrever sobre temas de desenvolvimento de software, telecomunicações, matemática, processamento 
+digital de sinais, e tudo que pode transformar-se em texto.
