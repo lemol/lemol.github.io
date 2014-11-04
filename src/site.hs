@@ -16,18 +16,33 @@ main = hakyllWith config $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.rst", "contact.markdown"]) $ do
+    match "js/*" $ do 
+        route idRoute
+	compile copyFileCompiler
+
+    match "fonts/*" $ do
+	route idRoute
+	compile copyFileCompiler
+
+    match (fromList ["about.markdown", "contact.markdown"]) $ do
         route   $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
+        compile $ do 
+            posts <- recentFirst =<< loadAll "posts/*"
+            let ctx = 
+		    listField "posts" postCtx (return posts) `mappend`
+		    defaultContext
+
+	    comp <- pandocCompiler
+            temp <- loadAndApplyTemplate "templates/default.html" ctx comp
+            relativizeUrls temp
 
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
+        compile $
+	    pandocCompiler
+                >>= loadAndApplyTemplate "templates/post.html"    postCtx
+                >>= loadAndApplyTemplate "templates/default.html" postCtx
+                >>= relativizeUrls
 
     create ["archive.html"] $ do
         route idRoute
@@ -58,6 +73,14 @@ main = hakyllWith config $ do
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
+    {-match "templates/default.html" $ compile $ do -}
+        {-posts <- recentFirst =<< loadAll "posts/*"-}
+	{-let ctx = listField "posts" postCtx (return posts) `mappend` postCtx-}
+	{-pandocCompiler-}
+                {->>= loadAndApplyTemplate "templates/default.html" ctx-}
+                {->>= relativizeUrls-}
+        {-templateCompiler-}
+
     match "templates/*" $ compile templateCompiler
 
 
@@ -69,5 +92,5 @@ postCtx =
 
 config :: Configuration
 config = def {
-        destinationDirectory = "../"
+        destinationDirectory = "../site"
     }
