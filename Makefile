@@ -17,10 +17,11 @@ build: $(SITE_APP)
 	cd $(SRC_DIR) && ../$(SITE_APP) build
 
 deploy:
-	git commit -a
+	#git commit -a
 	git checkout master
 	cp -r site/* .
 	rm -r -f site
+	git add --all
 	git commit -a
 	git push origin master
 	git push origin dev

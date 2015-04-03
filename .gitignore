@@ -29,3 +29,6 @@ cabal.config
 *.prof
 *.aux
 *.hp
+
+src/_cache
+site
