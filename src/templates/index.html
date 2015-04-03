@@ -1,0 +1,27 @@
+<div class="top-strip"></div>
+<div class="content">
+<main class="container">
+    <div class="row-fluid">
+            <section class="content">
+            <h1>Páginas de Lemol-C</h1>
+            </section>
+            <p>
+            A baixo vai a lista dos últimos posts publicados aqui no blog. 
+            Para saber mais sobre mim <a href="/about.html">clique aqui</a>.
+            </p>
+            <ul class="entries">
+            $for(posts)$
+                <li>
+                <a href="$url$">
+                    <span>$date$</span>
+                    <h3>$title</h3>
+                    <div>$abstract$</div>
+                </a>
+                </li>
+            $endfor$
+            </ul>
+    </div>
+    <hr>
+</main>
+</div>
+

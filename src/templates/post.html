@@ -1,33 +1,49 @@
-<div class="blog-post">
-  <h2 class="blog-post-title">$title$</h2>
-  <p class="blog-post-meta">$date$
-     $if(author)$
-        por <a href="#$author$">$author$</a>
-     $endif$
-  </p>
+<div class="top-strip"></div>
+<main class="content">
+    <section class="container">
+        <div class="row-fluid">
+            <article class="home-icon">
+                <a href="/">
+                    <i class="icon-home"></i> 
+                </a>
+            </article>
+            <article class="post">
+                <h5>$date$</h5>
+                <h2 class="content">$title$</h2>
+                <section>
+                    $body$
+                    <hr>
+                </section>
+                <section style="font-weight:bold; margin-bottom: 2em;">
+                    $if(previous)$
+                    <a rel="prev" class="a-hover" href="$previousu$"><i class="icon-double-angle-left"></i>$previous$</a>
+                    $endif$ $if(next)$
+                    <a rel="next" style="float:right" class="a-hover" href="$nextu$">$next$<i class=" icon-double-angle-right"></i></a>
+                    $endif$
+                </section>
+            </article>
+        </div>
+    </section>
+    <section>
+        <div>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'lemol-pages'; // required: replace example with your forum shortname
 
-  $body$
-
-</div><!-- /.blog-post -->
-
-<ul class="pager">
-  <li><a href="#">Previous</a></li>
-  <li><a href="#">Next</a></li>
-</ul>
-
-<div>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	var disqus_shortname = 'lemol-pages'; // required: replace example with your forum shortname
-
-	/* * * DON'T EDIT BELOW THIS LINE * * */
-	(function() {
-		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function()
+                {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </section>
+</main>

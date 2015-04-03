@@ -16,7 +16,7 @@ main = hakyllWith config $ do
         route   idRoute
         compile compressCssCompiler
 
-    match "js/*" $ do 
+    match "js/*" $ do
         route idRoute
 	compile copyFileCompiler
 
@@ -26,9 +26,9 @@ main = hakyllWith config $ do
 
     match (fromList ["about.markdown", "contact.markdown"]) $ do
         route   $ setExtension "html"
-        compile $ do 
+        compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
-            let ctx = 
+            let ctx =
 		    listField "posts" postCtx (return posts) `mappend`
 		    defaultContext
 
@@ -59,7 +59,7 @@ main = hakyllWith config $ do
                 >>= relativizeUrls
 
 
-    match "index.html" $ do
+    create ["index.html"] $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
@@ -68,8 +68,9 @@ main = hakyllWith config $ do
                     constField "title" "Home"                `mappend`
                     defaultContext
 
-            getResourceBody
-                >>= applyAsTemplate indexCtx
+            makeItem ""
+                {->>= applyAsTemplate indexCtx-}
+                >>= loadAndApplyTemplate "templates/index.html" indexCtx
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
