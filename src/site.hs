@@ -33,7 +33,8 @@ main = hakyllWith config $ do
 		    defaultContext
 
 	    comp <- pandocCompiler
-            temp <- loadAndApplyTemplate "templates/default.html" ctx comp
+            temp <- loadAndApplyTemplate "templates/main.html" ctx comp
+                    >>= loadAndApplyTemplate "templates/default.html" ctx
             relativizeUrls temp
 
     match "posts/*" $ do

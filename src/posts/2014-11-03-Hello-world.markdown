@@ -2,7 +2,7 @@
 title: Hello world!
 author: Lemol-C
 published: 03-11-2014
-abstract: Esse é o blog.
+abstract: main = print "Olá! Eu sou o Lemol-C."
 ---
 
 
