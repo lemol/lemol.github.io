@@ -8,7 +8,7 @@ import           Data.Default
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyllWith config $ do
-    match "images/*" $ do
+    match "img/*" $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -20,7 +20,7 @@ main = hakyllWith config $ do
         route idRoute
 	compile copyFileCompiler
 
-    match "fonts/*" $ do
+    match "font/*" $ do
 	route idRoute
 	compile copyFileCompiler
 
