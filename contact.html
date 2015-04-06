@@ -10,6 +10,7 @@
 		<link rel="author" href="./humans.txt">
 		<meta name="description" content="Description Goes Here">
 		<link rel="stylesheet" href="./css/style.css">
+                
 		<!--[if IE 7]>
 			<html class="ie7"> 
 			<link rel="stylesheet" type="text/css" href="/css/font-awesome-ie7.min.css">
@@ -24,35 +25,122 @@
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
 		<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
 		<link rel="shortcut icon" href="ico/favicon.png">	    
+                <style type="text/css">
+                    body {
+                        font-size: 16px;
+                        font-family: "Merriweather", Georgia, serif;
+                    }
+                    .home-hello {
+                        margin: 3em;
+                        font-size: 1.1em;
+                        line-height: 1.3em;
+                    }
+                    .post section {
+                        font-family: "Merriweather", "Noto serif";
+                        line-height: 1.6em;
+                        color: #555555;
+                    }
+                    .menu-icon {
+                        margin-top: 0.5em;
+                        font-size: 1.2em;
+                        text-align: center;
+                        color: #a0a0a0;
+                    }
+                    .menu-icon a {
+                        padding: 0.7em;
+                        color: #d0d0d0;
+                    }
+                    .menu-icon a:hover, .menu-icon a:active {
+                        outline: 0px none;
+                        text-decoration: none;
+                    }
+                    a.menu-home:hover, a.menu-home:active {
+                        color: #22ee33;
+                    }
+                    a.menu-github:hover, a.menu-github:active {
+                        color: #0000aa;
+                    }
+                    a.menu-twitter:hover, a.menu-twitter:active {
+                        color: #00eeee;
+                    }
+                    a.menu-contact:hover, a.menu-contact:active {
+                        color: #ee3030;
+                    }
+                    a.menu-about:hover, a.menu-about:active {
+                        color: #924ee4;
+                    }
+                    .content h2 {
+                        font-size: 3em;
+                        padding: 1.5em 0px 0.2em;
+                    }
+                    .content h5 {
+                        font-size: 0.9em;
+                        margin: 3em 0px -4em;
+                        font-family: "Noto Serif";
+                        text-transform: uppercase;
+                        font-weight: normal;
+                        letter-spacing: 0.6em;
+                    }
+                    .content h1 {
+                        font-family: Georgia,"Times New Roman",Times,serif;
+                        font-size: 4em;
+                        margin-top: 1em;
+                        border-bottom: 1px solid #222;
+                        padding-bottom: 0.6em;
+                        letter-spacing: 0.04em;
+                    }
+                    
+                </style>
 	</head>
 	<body>
 	<!-- Header
-	    ================================================== -->
+        ================================================== -->
 	<header>
-
+            <div class="container">
+                <div class="col-fluid menu-icon">
+                    <a title="Página principal" href="./" class="menu-home">
+                        <i class="icon-home"></i> 
+                    </a>
+                    ·
+                    <a title="Meus códigos" href="http://github.com/lemol" class="menu-github">
+                        <i class="icon-github-alt"></i> 
+                    </a>
+                    ·
+                    <a title="twitter" href="http://twitter.com/lemolsoft" class="menu-twitter">
+                        <i class="icon-twitter"></i> 
+                    </a>
+                    ·
+                    <a href="mailto:lemol-c@hotmail.com" class="menu-contact">
+                        <i class="icon-envelope"></i> 
+                    </a>
+                    ·
+                    <a title="Sobre mim" href="./about.html" class="menu-about">
+                        <i class="icon-question-sign"></i> 
+                    </a>
+                </div>
+            </div>
 	</header>
 
 	<div class="top-strip"></div>
-<div class="content">
-<main class="container">
-    <div class="row-fluid">
-            <section class="content">
-            <h1>Páginas de Lemol-C</h1>
-            </section>
-            <section class="content">
-            <p>I live in a small hut in the mountains of Kumano Kodō on Kii Hantō and would not like to be contacted.</p>
-            </section>
-    </div>
-    <hr>
+<main class="content">
+    <section class="container">
+        <div class="row-fluid">
+            <article class="post">
+            <h2 class="content">Contact</h2>
+                <section>
+                    <p>I live in a small hut in the mountains of Kumano Kodō on Kii Hantō and would not like to be contacted.</p>
+                    <hr>
+                </section>
+            </article>
+        </div>
+    </section>
 </main>
-</div>
-
 
 
 	<footer>
         <div class="container">
-            <a href="./about.html">sobre mim</a> | 
-                   (c) 2015 <a href="http://lemol.github.io/">Lemol-C</a> | Blog gerado por <a href="http://jaspervdj.be/hakyll">Hakyll</a> | Tema de <a hre="http://richbray.me/frap/">Frappuccino</a>
+            © 2015 <a href="./about.html">Leza Morais Lutonda</a> | 
+                   Blog gerado por <a href="http://jaspervdj.be/hakyll">Hakyll</a> | Tema de <a href="http://richbray.me/frap/">Frappuccino</a>
 		</div>
 	</footer>
 
