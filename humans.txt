@@ -1,0 +1,9 @@
+/* TEAM */
+Author: Leza Morais Lutonda (Lemol-C)
+Site: http://lemol.github.io
+Twitter: lemolsoft
+Location: Havana, Cuba
+
+/* SITE */
+Standard: HTML5, CSS3
+Software: Hakyll, Github
