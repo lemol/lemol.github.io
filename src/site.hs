@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
+import           System.Locale (TimeLocale(..))
 import           Data.Monoid (mappend)
 import           Hakyll
 import           Data.Default
@@ -89,10 +90,40 @@ main = hakyllWith config $ do
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
+    dateFieldWith ptTimeLocale "date" "%e de %B de %Y" `mappend`
     defaultContext
 
 config :: Configuration
 config = def {
         destinationDirectory = "../site"
     }
+
+
+ptTimeLocale :: TimeLocale
+ptTimeLocale =  TimeLocale {
+  wDays  = [("domingo", "dom"), ("segunda-feira",    "seg"),
+            ("terça-feira",    "ter"), ("quarta-feira", "qua"),
+            ("quinta-feira",    "qui"), ("sexta-feira", "sex"),
+            ("sábado",   "sab")],
+
+  months = [("janeiro",   "jan"), ("fevereiro",  "fev"),
+            ("março",      "mar"), ("abril",    "abr"),
+            ("maio",       "mai"), ("junho",    "jun"),
+            ("julho",  "jul"), ("agosto",    "ago"),
+            ("setembro", "set"), ("outubro",  "out"),
+            ("novembro",  "nov"), ("dezembro", "dez")],
+
+  intervals = [ ("ano","anos")
+              , ("mês", "meses")
+              , ("dia","dias")
+              , ("hora","horas")
+              , ("min","mins")
+              , ("seg","segs")
+              , ("useg","usegs")
+              ],
+  amPm = (" da manhã", " da tarde"),
+  dateTimeFmt = "%a %e %b %Y, %H:%M:%S %Z",
+  dateFmt   = "%d-%m-%Y",
+  timeFmt   = "%H:%M:%S",
+  time12Fmt = "%I:%M:%S %p"
+}
