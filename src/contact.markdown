@@ -1,6 +1,12 @@
 ---
-title: Contact
+title: Contatos de Lemol-C
+abstract: Fale com Leza Morais Lutonda; Também pode seguir no twitter ou no github.
 ---
 
-I live in a small hut in the mountains of Kumano Kodō on Kii Hantō and would not
-like to be contacted.
+Manda-me um olá!
+
++   e-mail: [lemol-c@hotmail.com](mailto:lemol-c@hotmail.com)
+
++   [@lemolsoft](https://twitter.com/lemolsoft) no twitter
+
++   [Fork me on github](https://github.com/lemol)

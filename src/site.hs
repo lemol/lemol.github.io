@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           System.Locale (TimeLocale(..))
+import           Data.Time.Format
 import           Data.Monoid (mappend)
 import           Hakyll
 import           Data.Default
@@ -19,25 +19,25 @@ main = hakyllWith config $ do
 
     match "js/*" $ do
         route idRoute
-	compile copyFileCompiler
+        compile copyFileCompiler
 
     match "font/*" $ do
-	route idRoute
-	compile copyFileCompiler
+        route idRoute
+        compile copyFileCompiler
 
     match "humans.txt" $ do
-	route idRoute
-	compile copyFileCompiler
+        route idRoute
+        compile copyFileCompiler
 
     match (fromList ["about.markdown", "contact.markdown"]) $ do
         route   $ setExtension "html"
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let ctx =
-		    listField "posts" postCtx (return posts) `mappend`
-		    defaultContext
+                    listField "posts" postCtx (return posts) `mappend`
+                    defaultContext
 
-	    comp <- pandocCompiler
+            comp <- pandocCompiler
             temp <- loadAndApplyTemplate "templates/main.html" ctx comp
                     >>= loadAndApplyTemplate "templates/default.html" ctx
             relativizeUrls temp
@@ -45,7 +45,7 @@ main = hakyllWith config $ do
     match "posts/*" $ do
         route $ setExtension "html"
         compile $
-	    pandocCompiler
+            pandocCompiler
                 >>= loadAndApplyTemplate "templates/post.html"    postCtx
                 >>= loadAndApplyTemplate "templates/default.html" postCtx
                 >>= relativizeUrls
@@ -57,6 +57,7 @@ main = hakyllWith config $ do
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Archives"            `mappend`
+                    constField "abstract" siteDescription `mappend`
                     defaultContext
 
             makeItem ""
@@ -71,7 +72,8 @@ main = hakyllWith config $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
+                    constField "title" "Leza Morais Lutonda"                `mappend`
+                    constField "abstract" siteDescription `mappend`
                     defaultContext
 
             makeItem ""
@@ -82,8 +84,8 @@ main = hakyllWith config $ do
 
     {-match "templates/default.html" $ compile $ do -}
         {-posts <- recentFirst =<< loadAll "posts/*"-}
-	{-let ctx = listField "posts" postCtx (return posts) `mappend` postCtx-}
-	{-pandocCompiler-}
+        {-let ctx = listField "posts" postCtx (return posts) `mappend` postCtx-}
+        {-pandocCompiler-}
                 {->>= loadAndApplyTemplate "templates/default.html" ctx-}
                 {->>= relativizeUrls-}
         {-templateCompiler-}
@@ -117,17 +119,22 @@ ptTimeLocale =  TimeLocale {
             ("setembro", "set"), ("outubro",  "out"),
             ("novembro",  "nov"), ("dezembro", "dez")],
 
-  intervals = [ ("ano","anos")
-              , ("mês", "meses")
-              , ("dia","dias")
-              , ("hora","horas")
-              , ("min","mins")
-              , ("seg","segs")
-              , ("useg","usegs")
-              ],
+  {-intervals = [ ("ano","anos")-}
+              {-, ("mês", "meses")-}
+              {-, ("dia","dias")-}
+              {-, ("hora","horas")-}
+              {-, ("min","mins")-}
+              {-, ("seg","segs")-}
+              {-, ("useg","usegs")-}
+              {-],-}
   amPm = (" da manhã", " da tarde"),
   dateTimeFmt = "%a %e %b %Y, %H:%M:%S %Z",
   dateFmt   = "%d-%m-%Y",
   timeFmt   = "%H:%M:%S",
-  time12Fmt = "%I:%M:%S %p"
+  time12Fmt = "%I:%M:%S %p",
+  knownTimeZones = []
 }
+
+siteDescription = "Bem vindo às páginas de Leza Morais Lutonda (Lemol-C). " ++
+                  "Aqui se trata sobre telecomunicações, processamento digital de sinais, " ++
+                  "desenvolvimento de software, programação funcional, matemática, etc."

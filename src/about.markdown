@@ -1,11 +1,12 @@
 ---
 title: Quem é Leza Morais Lutonda
+abstract: Leza Morais Lutonda, aliás Lemol (a.k.a Lemol-C); engenheiro em telecomunicações e electrónica; aficionado em desenvolvimento de software; escreve sobre haskell, processamento digital de sinais, telecomunicações, desenvolvimento de software, etc., em http://lemol.github.io.
 ---
 
-**Leza Morais Lutonda**, alias ***Lemol*** (a.k.a ***Lemol-C***) é angolano, candidato ao título de 
-engenheiro em telecomunicações e eletrónica pela [CUJAE]. Também se considera aficionado 
-em desenvolvimento e arquitetura de software. Ainda sonha em estudar temas avançados 
-de matemática pura.
+**Leza Morais Lutonda**, aliás ***Lemol*** (a.k.a ***Lemol-C***) é angolano,
+candidato ao título de engenheiro em telecomunicações e eletrónica pela [CUJAE].
+Também se considera aficionado em desenvolvimento e arquitetura de software.
+Ainda sonha em estudar temas avançados de matemática pura.
 
 Começou a envolver-se com programação já faz um tempo (ou talvez dois tempos) havendo 
 passado por VB6 (o que passou, passou) e posteriormente se encantou com programação 
