@@ -29,7 +29,7 @@ Github](https://github.com/lemol).
 
 Em fim, em essas páginas poderás encontrar postagens sobre diversos temas. Fora
 quando se faça menção, todos os artigos serão publicados baixo a licencia
-Creative Commons. O site é gerado por [Hakyll] e hospedado por Github pages. O
+Creative Commons. O site é gerado por [Hakyll] e hospedado por [Github pages]. O
 código para a geração do site também é livre, e baixo a licencia
 [MIT](http://lemolsoft.mit-license.org).
 
@@ -39,3 +39,4 @@ código para a geração do site também é livre, e baixo a licencia
 [CUJAE]: http://www.cujae.edu.cu
 [Haskell]: http://www.haskell.org/haskellwiki/Haskell
 [Hakyll]: http://jaspervdj.be/hakyll
+[Github pages]: http://pages.github.io
