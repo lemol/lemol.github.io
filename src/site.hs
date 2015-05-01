@@ -32,7 +32,7 @@ main = hakyllWith config $ do
     match (fromList ["about.markdown", "contact.markdown"]) $ do
         route   $ setExtension "html"
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- recentFirst =<< loadAll "posts/*.m*"
             let ctx =
                     listField "posts" postCtx (return posts) `mappend`
                     defaultContext
@@ -42,7 +42,7 @@ main = hakyllWith config $ do
                     >>= loadAndApplyTemplate "templates/default.html" ctx
             relativizeUrls temp
 
-    match "posts/*" $ do
+    match "posts/*.m*" $ do
         route $ setExtension "html"
         compile $
             pandocCompiler
@@ -53,7 +53,7 @@ main = hakyllWith config $ do
     create ["archive.html"] $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- recentFirst =<< loadAll "posts/*.m*"
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Archives"            `mappend`
@@ -69,7 +69,7 @@ main = hakyllWith config $ do
     create ["index.html"] $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- recentFirst =<< loadAll "posts/*.m*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Leza Morais Lutonda"                `mappend`
