@@ -1,9 +1,8 @@
 ---
 title: Como esse blog é gerado?
 date: 01-05-2014
-abstract: Resposta curta: é gerado de uma forma bem divertida. Resposta longa: leia o artigo :)
+abstract: Resposta curta: é gerado de uma forma bem divertida. Resposta media: com Hakyll, uma biblioteca em Haskell para compilar páginas webs estáticas. Resposta longa: leia o artigo :)
 ---
-
 
 Olá, depois de tantos anos de tanto pospôr, finalmente aqui estou eu para fazer
 com que esse site tenha o sentido do qual foi criado. Aliás, essa não é a
