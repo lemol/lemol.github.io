@@ -2,13 +2,13 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-                <title>Como esse blog é gerado? >>= Páginas de Lemol-C</title>
+                <title>Preparando para introduzir a linguagem Haskell >>= Páginas de Lemol-C</title>
 		<!-- For responsive site
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		-->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<link rel="author" href="../humans.txt">
-                <meta name="description" content="Resposta curta: é gerado de uma forma bem divertida. Resposta media: com Hakyll, uma biblioteca em Haskell para compilar páginas webs estáticas. Resposta longa: leia o artigo :)">
+                <meta name="description" content="Instalando o ecossistema para programar em Haskell, uma linguagem puramente funcional de propósito geral. Conheça o compilador GHC, o interpretador GHCi e cabal, o gestor de pacotes haskell">
 		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/font-mfizz.css">
                 
@@ -144,37 +144,61 @@
     <section class="container">
         <div class="row-fluid">
             <article class="post">
-                <h5> 1 de maio de 2015</h5>
-                <h2 class="content">Como esse blog é gerado?</h2>
+                <h5> 4 de maio de 2015</h5>
+                <h2 class="content">Preparando para introduzir a linguagem Haskell</h2>
                 <section>
-                    <p>Olá, depois de tantos anos de tanto pospôr, finalmente aqui estou eu para fazer com que esse site tenha o sentido do qual foi criado. Aliás, essa não é a primeira tentativa minha de ter um site onde expressar meus registos, porém estou convencido que essa vez vai vingar, já que o processo de gerar o blog não é chato como as formas tradicionais.</p>
-<p>Nesse post explico como gero esse blog, e dou dicas de como você pode fazer o mesmo. Então, vamos embora!</p>
-<p>Quando se trata de blogs, provavelmente se pensaria em sistemas de gestão de conteúdo como o <a href="http://wordpress.com">Wordpress</a>, ou em serviços como o <a href="http://blogger.com">Blogger</a>, ou outras das excelentes alternativas prontas para o uso que se pode encontrar pela internet. Não obstante, outra alternativa que tem ganhado alguns adeptos (ex: eu) é a geração de blogs com páginas estática. Essa abordagem se difere das outras, no sentido de que todas páginas a serem hospedadas são geralmente ficheiros de tipo .html prontos para serem acessados por um navegador, enquanto que em sites dinâmicos se necessita de um servidor especializado e base de dados, por exemplo, wordpress necessita PHP e MySQL. Os sites estáticos são seguros, rápidos e fáceis de manejar.</p>
-<p>Esse blog é gerado em forma de páginas estáticas utilizando <a href="http://jaspervdj.be/hakyll/">Hakyll</a>. O site é hospedado pelo <a href="http://pages.github.io">Github pages</a>, e se aproveita o uso de git para manter o controle das versões.</p>
-<p><a href="http://jaspervdj.be/hakyll/">Hakyll</a> é uma biblioteca de <a href="https://www.haskell.org">Haskell</a> que serve para compilar sites estáticos. Agora mesmo não vou entrar em detalhes sobre a linguagem Haskell (pode estar seguro que futuramente o farei) já que para utilizar o Hakyll não é necessario conhecer detalhes de Haskell. Mas para utilizar o Hakyll tem que ter um ecossistema para Hasekell instalado (i.e.: compilador, etc.)</p>
-<p>Se pode baixar e instalar a última versão de Haskell a partir das instruções em <a href="https://www.haskell.org/downloads" class="uri">https://www.haskell.org/downloads</a>, de acordo com o seu sistema operativo.</p>
-<p>Uma vez instalada a plataforma para Haskell, a instalação de Hakyll é trivial: na linha de comandos (ou terminal, ou consola) executar (nota que este passo requer uma conexão de internet):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cabal</span> install hakyll</code></pre></div>
-<p>Depois, já estamos preparados para criar nosso blog:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mkdir</span> meublog
-<span class="kw">cd</span> meublog
-<span class="kw">hakyll-init</span> .</code></pre></div>
-<p>Com isso se criarão os ficheiros necessários para gerar as páginas estáticas. Todos os ficheiros estão na pasta <code>meublog</code>, onde por exemplo podes inserir um novo artigo criando um ficheiro na pasta <code>/posts</code>, seguindo o padrão dos ficheiros de exemplo que aí se encontram. Por exemplo, criar <code>/posts/2015-05-01-ola-universo.markdown</code> e colocar o seguinte conteúdo:</p>
-<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">---
-title: Olá Universo!
----
-
-<span class="fu">## Olá universo.</span>
-
-Esse é o **meu** primeiro post com hakyll.
-Isso é um <span class="ot">[link](http://lemol.github.io)</span>.
-
-*Chau* Universo.</code></pre></div>
-<p>Finalmente, para gerar o conteúdo estático:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ghc</span> --make site.hs
-<span class="kw">./site</span> build</code></pre></div>
-<p>Aqui, o primeiro comando compila o código em haskell que está em <code>site.hs</code> e o segundo executa o resultado para gerar o site. As páginas estáticas resultantes estarão na pasta <code>_site</code>. Já pode abri-los com o seu navegador preferido.</p>
-<p>Bem, era isso para hoje :), posteriormente entrarei em mais detalhes sobre o Hakyll, e sobre como hospedá-lo em Github Pages. Por enquanto, para saber mais sobre o <a href="http://jaspervdj.be/hakyll/">Hakyll</a> visite a <a href="Hakyll">página oficial</a> dele.</p>
+                    <p>Olá, como vai? No <a href="../posts/2015-05-01-como-esse-blog-e-gerado.html">post anterior</a> expliquei que esse blog é gerado por <a href="http://jaspervdj.be/hakyll/">Hakyll</a>, uma biblioteca de Haskell para compilar páginas webs estáticas. Hoje, pretendo começar a falar um pouco sobre Haskell, uma linguagem de programação puramente funcional. Este breve post servirá de principio para posts vindouros relacionados com o tema, por tanto, hoje só vamos preparar o ambiente para escrever e compilar programas em Haskell. Não se preocupe que no próximo artigo apresentarei as motivações e o <a href="https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf">por quê a programação funcional vale a pena</a>, mas por enquanto: mãos a obra!</p>
+<p>A melhor forma de iniciar a programar em Haskell é instalando o <a href="https://www.haskell.org/platform/index.html">Haskell Platform</a>, um pacote que traz consigo as principais ferramentas prontas para começar usar a linguagem. Os programas de instalação e instruções para <a href="https://www.haskell.org/platform/windows.html">Windows</a>, <a href="https://www.haskell.org/platform/mac.html">Mac</a> e <a href="https://www.haskell.org/platform/linux.html">Linux</a> estão disponíveis para <a href="Haskell%20Platform">download</a>.</p>
+<p>Algumas distribuições de Linux como o <a href="http://packages.ubuntu.com/haskell-platform">Ubuntu</a>, <a href="http://packages.debian.org/haskell-platform">Debian</a>, <a href="http://hydra.nixos.org/job/nixpkgs/trunk/haskellPlatform">NixOS</a>, etc. contam com o Haskell Platform em seus repositórios, por isso podes tentar primeiro instalar com o teu gestor de pacotes. Para <a href="https://www.archlinux.org/packages/extra/x86_64/ghc/">ArchLinuxeros</a> como eu :), a sena é <code>pacman -S ghc</code>, OK?</p>
+<p>Uma vez instalado, conheçamos então as ferramentas.</p>
+<h3 id="ghc-o-compilador">GHC: O compilador</h3>
+<p>GHC (Glasgow Haskell Compiler) segundo o <a href="https://www.haskell.org/ghc/">site oficial</a>:</p>
+<blockquote>
+<blockquote>
+<p>GHC is a state-of-the-art, open source, compiler and interactive environment for the functional language Haskell…</p>
+</blockquote>
+</blockquote>
+<p>Ou seja, é um compilador de Haskell de código aberto. Atualmente tem-se considerado como o compilador <em>de-facto</em>.</p>
+<p>Para confirmar que o Haskell Platform instalou o GHC correctamente, executemos o seguinte na línea de comandos:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ghc</span> --version</code></pre></div>
+<p>Se o sistema consegue encontrar o comando, e apresentar a versão do compilador, então é sinal de que tudo está bem. Caso contrario, deve haver algum problema :(.</p>
+<h3 id="ghci-ghc-interactivo">GHCi: GHC interactivo</h3>
+<p>É um ambiente interactivo, onde se pode avaluar e interpretar expressões e programas de Haskell interactivamente. O comando é <code>ghci</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ghci</span>
+<span class="kw">GHCi</span>, version 7.10.1: http://www.haskell.org/ghc/  :? for help
+<span class="kw">Prelude&gt;</span></code></pre></div>
+<p>Agora pode tentar escrever algumas coisas, e ver o resultado, por exemplo, algumas operações aritméticas tais como se escreve em Haskell:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Prelude&gt;</span> 1+1
+<span class="kw">2</span>
+<span class="kw">Prelude&gt;</span> 2*3+4
+<span class="kw">10</span></code></pre></div>
+<p>Trabalhando com variáveis:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="dt">Prelude</span><span class="fu">&gt;</span> <span class="kw">let</span> x <span class="fu">=</span> <span class="dv">10</span>
+<span class="dt">Prelude</span><span class="fu">&gt;</span> <span class="kw">let</span> y <span class="fu">=</span> <span class="dv">20</span>
+<span class="dt">Prelude</span><span class="fu">&gt;</span> <span class="dv">2</span><span class="fu">*</span>x <span class="fu">+</span> y
+<span class="dv">40</span></code></pre></div>
+<p>Bónus: trabalhando com funções, listas, etc. (é que eu não quero entrar nesses detalhes no post de hoje):</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Prelude&gt;</span> let duplicate x = 2*x
+<span class="kw">Prelude&gt;</span> duplicate 5
+<span class="kw">10</span>
+<span class="kw">Prelude&gt;</span> map duplicate [1,2,3,4]
+[<span class="kw">2</span>,4,6,8]
+<span class="kw">Prelude&gt;</span> sum $ map duplicate [1..10]
+<span class="kw">110</span></code></pre></div>
+<p>Entendeu a ideia? Não importa, explicarei em um outro artigo. A ideia que deve ficar hoje é que com GHCi se pode escrever códigos em Haskell e obter os resultados interactivamente. OK?</p>
+<h3 id="o-sistema-gestor-de-pacotes-cabal">O sistema gestor de pacotes: Cabal</h3>
+<p>Definição do <a href="https://www.haskell.org/cabal/users-guide/">site oficial</a>:</p>
+<blockquote>
+<blockquote>
+<p>Cabal is the standard package system for Haskell software. It helps people to configure, build and install Haskell software and to distribute it easily to other users and developers.</p>
+</blockquote>
+</blockquote>
+<p>Ou seja, é a ferramenta que facilita a instalação de bibliotecas para Haskell. Sem ele a vida não seria nada fácil :). O comando para tal é <code>cabal</code>. Ele está configurado para baixar os pacotes de <a href="https://hackage.haskell.org/">Hackage</a>, que é o arquivo central de bibliotecas para Haskell. Para ver se o cabal está instalado correctamente, vamos tentar instalar uma biblioteca, por exemplo a biblioteca <code>vector</code>:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cabal</span> install vector</code></pre></div>
+<p>Se não resultar em erro, então tudo está bem e já instalamos a nossa primeira biblioteca.</p>
+<h3 id="bónus-tenta-o-haskell-na-web">Bónus: Tenta o Haskell na web</h3>
+<p>Enquanto escrevia esse post descobri o <a href="http://ghc.io/">GHCi Online</a>, onde podes testar o Haskell a partir de um navegador, sem a necessidade de instalar o compilador em sua máquina. Para além disso, na <a href="https://www.haskell.org/">página oficial</a> da linguagem também há uma ferramenta similar (Try it), onde desde já recomendo que visite para conhecer mais geralidades do Haskell.</p>
+<p>Bem, era isso :)</p>
                     <hr>
                 </section>
                 <section style="font-weight:bold; margin-bottom: 2em;">
