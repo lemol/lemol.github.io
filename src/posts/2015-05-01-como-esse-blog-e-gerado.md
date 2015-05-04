@@ -29,10 +29,12 @@ hospedado pelo [Github pages], e se aproveita o uso de git para manter o
 controle das versões.
 
 [Hakyll] é uma biblioteca de [Haskell] que serve para compilar sites estáticos.
-Agora mesmo não vou entrar em detalhes sobre a linguagem Haskell (pode estar
-seguro que futuramente o farei) já que para utilizar o Hakyll não é necessario
-conhecer detalhes de Haskell. Mas para utilizar o Hakyll tem que ter um
-ecossistema para Hasekell instalado (i.e.: compilador, etc.)
+Agora mesmo não vou entrar em detalhes sobre a linguagem Haskell ([pode estar
+seguro que futuramente o
+farei](/posts/2015-05-04-preparando-para-introduzir-a-linguagem-haskell.html))
+já que para utilizar o Hakyll não é necessario conhecer detalhes de Haskell. Mas
+para utilizar o Hakyll tem que ter um ecossistema para Hasekell instalado (i.e.:
+compilador, etc.)
 
 Se pode baixar e instalar a última versão de Haskell a partir das instruções em
 [https://www.haskell.org/downloads](https://www.haskell.org/downloads), de
