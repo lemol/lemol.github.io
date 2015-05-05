@@ -22,7 +22,7 @@ começar usar a linguagem. Os programas de instalação e instruções para
 
 Algumas distribuições de Linux como o [Ubuntu], [Debian], [NixOS], etc. contam
 com o Haskell Platform em seus repositórios, por isso podes tentar primeiro
-instalar com o teu gestor de pacotes. Para [ArchLinuxeros] como eu :), a sena é
+instalar com o teu gestor de pacotes. Para [ArchLinuxeros] como eu :), a cena é
 `pacman -S ghc`, OK?
 
 Uma vez instalado, conheçamos então as ferramentas.
