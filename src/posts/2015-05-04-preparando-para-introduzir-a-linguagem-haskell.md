@@ -18,7 +18,7 @@ enquanto: mãos a obra!
 A melhor forma de iniciar a programar em Haskell é instalando o [Haskell
 Platform], um pacote que traz consigo as principais ferramentas prontas para
 começar usar a linguagem. Os programas de instalação e instruções para
-[Windows], [Mac] e [Linux] estão disponíveis para [download](Haskell Platform).
+[Windows], [Mac] e [Linux] estão disponíveis para [download].
 
 Algumas distribuições de Linux como o [Ubuntu], [Debian], [NixOS], etc. contam
 com o Haskell Platform em seus repositórios, por isso podes tentar primeiro
@@ -110,6 +110,7 @@ bibliotecas para Haskell. Para ver se o cabal está instalado correctamente, vam
 tentar instalar uma biblioteca, por exemplo a biblioteca `vector`:
 
 ```bash
+cabal update
 cabal install vector
 ```
 
@@ -133,6 +134,7 @@ Bem, era isso :)
 [Hakyll]: http://jaspervdj.be/hakyll/
 [wfpm]: https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf
 [Haskell Platform]: https://www.haskell.org/platform/index.html
+[download]: https://www.haskell.org/platform/index.html
 [Windows]: https://www.haskell.org/platform/windows.html
 [Mac]: https://www.haskell.org/platform/mac.html
 [Linux]: https://www.haskell.org/platform/linux.html
